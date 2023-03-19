@@ -1,0 +1,15 @@
+.menu {
+	background: #dc8a10;
+}
+
+.about-position {
+	@media (max-width:641px) {
+		margin-top: -10% !important;
+		border-radius: 10px 10px 0 0;
+		border: none;
+	}
+}
+
+.card {
+	border: none !important;
+}

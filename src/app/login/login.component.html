@@ -1,0 +1,105 @@
+<subscriptions-carousel></subscriptions-carousel>
+
+<div *ngIf="logInForm" class="row">
+	<div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+		<div class="card auth">
+			<div class="card-body auth-card">
+				<div class="auth-avatar">
+					<img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"
+						alt="user" class="user-image">
+				</div>
+				<form (submit)="login(loginUserData)">
+					<div class="form-group">
+						<label for="email">Email : </label>
+						<input type="text" name="loginEmail" class="form-control" placeholder="Email"
+							[(ngModel)]="loginUserData.loginEmail">
+					</div>
+					<div class="form-group">
+						<label for="password">Password : </label>
+						<input type="password" name="loginPassword" class="form-control" placeholder="********"
+							[(ngModel)]="loginUserData.loginPassword">
+						<div class="text-right forget-pass">
+							<a routerLink="/forget-password">Forget Password ?</a>
+						</div>
+					</div>
+					<div class="text-center">
+						<input type="submit" class="btn btn-my" value="Login">
+					</div>
+				</form>
+				<div class="text-center sign-up">
+					Don't have an account ? <button (click)="openSignupPage()">Sign Up</button> here.
+				</div>
+				<div *ngIf="logInError" class="text-center login">
+					Wrong Email Id or Password
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="signUpForm" class="row">
+	<div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+		<div class="card auth">
+			<div class="card-body auth-card">
+				<div class="auth-avatar">
+					<img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"
+						alt="user" class="user-image">
+				</div>
+				<form (submit)="signUp(signupUserData)">
+					<div class="form-group">
+						<label for="name">Name : </label>
+						<input type="text" name="name" class="form-control" placeholder="Name"
+							[(ngModel)]="signupUserData.userName">
+					</div>
+					<div class="form-group">
+						<label for="email">Email : </label>
+						<input type="text" name="email" class="form-control" placeholder="Email"
+							[(ngModel)]="signupUserData.userEmail">
+					</div>
+					<div class="form-group">
+						<label for="password">Password : </label>
+						<input type="password" name="password" class="form-control" placeholder="********"
+							[(ngModel)]="signupUserData.password">
+					</div>
+					<div class="form-group">
+						<label for="role">Role:</label> <br>
+						<input type="radio" value="chef" [(ngModel)]="signupUserData.role" name="role">
+						<label class="label" for="role">Chef</label>
+						<input class="radio" type="radio" value="user" [(ngModel)]="signupUserData.role" name="role">
+						<label class="label" for="role">User</label>
+					</div>
+					<div class="text-center">
+						<input type="submit" class="btn btn-my" value="Sign Up">
+					</div>
+					<div class="text-center login">
+						Already have an account ? <button (click)="openLoginPage()">Login</button> here.
+					</div>
+					<div *ngIf="signUpError" class="text-center login">
+						Account exists with the Email Id
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="userName" class="row">
+	<div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+		<div class="card auth">
+			<div class="card-body auth-card">
+				<div class="auth-avatar">
+					<img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"
+						alt="user" class="user-image">
+				</div>
+				<form (submit)="logout()">
+					<div class="form-group username">
+						<label for="name">Hi {{userName}} </label>
+					</div>
+					<div class="text-center">
+						<input type="submit" class="btn btn-my" value="Logout">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

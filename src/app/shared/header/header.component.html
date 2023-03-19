@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top fixed-top-background" id="first-navbar-top">
+	<nav class="container">
+		<a class="navbar-brand text-u container-text" routerLink="/">
+			<img src="./assets/images/logo.png" [ngClass]="!fixed ? 'w-50' : 'w-25'">
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-top"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbar-top">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown pt-2">
+					<a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+						routerLink="/" id="HomeDropdown" role="button" data-toggle="dropdown"
+						[@animate]="{value:'*', params:{ scale:'0.5', delay:'400ms' }}">
+						Home
+					</a>
+					<div class="dropdown-menu" aria-labelledby="HomeDropdown" [routerLink]="['/']" fragment="/"
+						data-toggle="collapse" data-target=".navbar-collapse.show">
+
+						<a class="dropdown-item" href="#about">
+							About</a>
+
+						<a class="dropdown-item" href="#variety">
+							Variety of Chef's and their top Signature Dishes</a>
+
+						<a class="dropdown-item" href="#facilities">
+							Services</a>
+
+						<a class="dropdown-item" href="#map-data">
+							Map</a>
+					</div>
+				</li>
+
+				<li class="nav-item dropdown pt-2">
+					<a class="nav-link" [routerLinkActive]="['active']" routerLink="/subscriptions" id="MenuPackage"
+						role="button" data-toggle="dropdown" aria-expanded="false"
+						[@animate]="{value:'*', params:{ scale:'0.5', delay:'400ms' }}">
+						Subscriptions
+					</a>
+				</li>
+
+				<li class="nav-item dropdown pt-2">
+					<a class="nav-link" [routerLinkActive]="['active']" routerLink="/services" id="Services"
+						role="button" data-toggle="dropdown" aria-expanded="false"
+						[@animate]="{value:'*', params:{ scale:'0.5', delay:'400ms' }}">
+						Services
+					</a>
+					<div class="dropdown-menu" aria-labelledby="Services" data-toggle="collapse"
+						data-target=".navbar-collapse.show">
+						<a class="dropdown-item" routerLink="services/personal-chef">
+							Personal Chefs</a>
+						<a class="dropdown-item" routerLink="services/chef-rooms">
+							Chef Room</a>
+					</div>
+				</li>
+
+
+				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+					<a class="nav-link pt-3" [routerLinkActive]="['active']" routerLink="/login"
+						[@animate]="{value:'*', params:{ scale:'0.5', delay:'400ms' }}">
+						{{userName || 'LogIn / SignUp'}}
+					</a>
+				</li>
+			</ul>
+
+
+		</div>
+
+	</nav>
+</nav>
